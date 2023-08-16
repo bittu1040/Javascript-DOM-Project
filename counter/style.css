@@ -1,0 +1,11 @@
+.center {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+#counter{
+    font-size: 80px;
+}
