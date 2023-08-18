@@ -41,17 +41,25 @@
   
   .projects {
     display: flex;
-    flex-direction: column;
-    width: 200px;
+    flex-wrap: wrap;
+    max-width: 100%;
   }
   
   .project-link {
     background-color: #fff;
     padding: 10px 30px;
     border-radius: 8px;
-    color: #212121;
-    text-decoration: none;
     border: 1px solid #212121;
-    margin-top: 5px;
+    margin: 5px;
+    font-weight: bold;
+  }
+
+  .text-decoration{
+    text-decoration: none;
+    color: black;
+  }
+
+  .not-implemented{
+    background-color: #fa7070;
   }
   
