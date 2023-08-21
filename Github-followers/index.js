@@ -54,6 +54,7 @@ function getUserName(user){
 function getListOfProjects(project){
     return new Promise((resolve, reject)=>{
         const projectData= project;
+        console.log("projects", projectData);
         resolve(projectData)
     })
 }
@@ -67,21 +68,33 @@ function getListOfProjects(project){
 //             console.log(error)
 //         });
 
-getUser(1)
-  .then((user) => {
-    console.log("User retrieved:", user);
-    return getUserName(user);
-  })
-  .then((projects) => {
-    console.log("User's projects retrieved:", projects);
-    return getListOfProjects(projects);
-  })
-  .then((projects) => {
-    console.log("All data retrieved:", projects);
-  })
-  .catch((error) => {
-    console.error("An error occurred:", error);
-  });
+// getUser(1)
+//   .then((user) => {
+//     console.log("User retrieved:", user);
+//     return getUserName(user);
+//   })
+//   .then((projects) => {
+//     console.log("User's projects retrieved:", projects);
+//     return getListOfProjects(projects);
+//   })
+//   .then((projects) => {
+//     console.log("All data retrieved:", projects);
+//   })
+//   .catch((error) => {
+//     console.error("An error occurred:", error);
+//   });
+
+async function main() {
+    try {
+      const user = await getUser(1);
+      const projects = await getUserName(user);
+      getListOfProjects(projects);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+  main();
 
 
 
