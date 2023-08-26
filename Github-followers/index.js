@@ -1,3 +1,91 @@
+
+
+// JS callback example
+
+// example-1
+function add(a,b){
+    console.log("add")
+    return a+b;}
+    
+    function multi(a,b){
+    return a*b;
+    }
+    
+    function subs(a,b){
+    return a-b;
+    }
+    
+    function calc(a,b,callback1){
+    const res= callback1(a,b);
+    console.log("calc");
+    return res
+    }
+    
+    let res= calc(3,4,add);
+    
+    /* let res1= calc(res,2, multi);
+    
+    let res2= calc(res1, 5, subs) */
+    
+    console.log(res)
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function getUsersFromGitHub() {
+    try {
+      const response =  fetch("https://api.github.com/users");
+  
+      // Check if the response status is OK (status code 200)
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data =  response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data from GitHub API:", error);
+      throw error; // You can handle or rethrow the error as needed
+    }
+  }
+  
+  // Example usage
+  getUsersFromGitHub()
+    .then(users => {
+      console.log("GitHub users:", users);
+    })
+    .catch(error => {
+      // Handle errors here if needed
+    });
+
 // id, name, projects
 
 
