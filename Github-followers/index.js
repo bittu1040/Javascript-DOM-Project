@@ -1,89 +1,47 @@
 
 
-// JS callback example
-
-// example-1
-function add(a,b){
-    console.log("add")
-    return a+b;}
-    
-    function multi(a,b){
-    return a*b;
-    }
-    
-    function subs(a,b){
-    return a-b;
-    }
-    
-    function calc(a,b,callback1){
-    const res= callback1(a,b);
-    console.log("calc");
-    return res
-    }
-    
-    let res= calc(3,4,add);
-    
-    /* let res1= calc(res,2, multi);
-    
-    let res2= calc(res1, 5, subs) */
-    
-    console.log(res)
-
-    
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- function getUsersFromGitHub() {
-    try {
-      const response =  fetch("https://api.github.com/users");
-  
-      // Check if the response status is OK (status code 200)
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-  
-      const data =  response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching data from GitHub API:", error);
-      throw error; // You can handle or rethrow the error as needed
-    }
+function getUsersFromGitHub(user) {
+    return fetch(`https://api.github.com/users/${user}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      });
   }
   
-  // Example usage
-  getUsersFromGitHub()
-    .then(users => {
-      console.log("GitHub users:", users);
-    })
-    .catch(error => {
-      // Handle errors here if needed
+//   getUsersFromGitHub('bittu1040')
+//     .then(data => {
+//       console.log(data);
+//     })
+//     .catch(error => {
+//       console.log("Error:", error.message);
+//       alert("wrong user details")
+//     });
+
+
+    document.getElementById("submit").addEventListener('click', ()=>{
+       const userName= document.getElementById('userInput').value
+       getUsersFromGitHub(userName)
+       .then(data => {
+         console.log(data);
+         document.getElementById('name').innerHTML= data.name?data.name: "empty" ;
+         document.getElementById('bio').innerHTML= data.bio ? data.bio: "empty";
+         document.getElementById('company').innerHTML= data.company ? data.company : "empty" ;
+         document.getElementById('location').innerHTML= data.location ? data.location: "empty";
+         document.getElementById('followers').innerHTML= data.followers ?data.followers:"0" ;
+         document.getElementById('following').innerHTML= data.following ?data.following:"0" ;
+         document.getElementById('public_repos').innerHTML= data.public_repos ? data.public_repos: "0";
+         document.getElementById('profile_img').src=data.avatar_url;
+         document.getElementById('follow').href= data.html_url;
+
+       })
+       .catch(error => {
+         console.log("Error:", error.message);
+         document.getElementById('wrongDetails').innerHTML="Please enter correct User ID";
+       });
     });
 
 // id, name, projects
@@ -120,6 +78,7 @@ getUser(1, getUserName);
 
 // promise
 
+/*
 function getUser(id){
     return new Promise((resolve, reject)=>{
         setTimeout(() => {
@@ -146,32 +105,42 @@ function getListOfProjects(project){
         resolve(projectData)
     })
 }
+*/
 
-// getUser(2)
-//         .then(getUserName)
-//         .then(getListOfProjects)
-//         .then((project)=>{
-//             console.log(project)
-//         }).catch((error)=>{
-//             console.log(error)
-//         });
+//through .then and .catch
 
-// getUser(1)
-//   .then((user) => {
-//     console.log("User retrieved:", user);
-//     return getUserName(user);
-//   })
-//   .then((projects) => {
-//     console.log("User's projects retrieved:", projects);
-//     return getListOfProjects(projects);
-//   })
-//   .then((projects) => {
-//     console.log("All data retrieved:", projects);
-//   })
-//   .catch((error) => {
-//     console.error("An error occurred:", error);
-//   });
+/*
+getUser(2)
+        .then(getUserName)
+        .then(getListOfProjects)
+        .then((project)=>{
+            console.log(project)
+        }).catch((error)=>{
+            console.log(error)
+        });
 
+getUser(1)
+  .then((user) => {
+    console.log("User retrieved:", user);
+    return getUserName(user);
+  })
+  .then((projects) => {
+    console.log("User's projects retrieved:", projects);
+    return getListOfProjects(projects);
+  })
+  .then((projects) => {
+    console.log("All data retrieved:", projects);
+  })
+  .catch((error) => {
+    console.error("An error occurred:", error);
+  });
+
+*/
+
+
+// through async-await
+
+/*
 async function main() {
     try {
       const user = await getUser(1);
@@ -184,7 +153,7 @@ async function main() {
   
   main();
 
-
+*/
 
 
 
@@ -245,6 +214,60 @@ first(second);
 */
 
 
+
+// JS callback example
+
+// example-1
+
+/*
+function add(a,b){
+    console.log("add")
+    return a+b;}
+    
+    function multi(a,b){
+    return a*b;
+    }
+    
+    function subs(a,b){
+    return a-b;
+    }
+    
+    function calc(a,b,callback1){
+    const res= callback1(a,b);
+    console.log("calc");
+    return res
+    }
+    
+    let res= calc(3,4,add);
+    
+    let res1= calc(res,2, multi);
+    
+    let res2= calc(res1, 5, subs)
+    
+    console.log(res2)
+*/
+
+
+// example 2
+
+/*
+    function addtwo(a,b){
+        return a+b;
+    }
+
+    function addNumberInArray(array, callback){
+        console.log("array input", array)
+        let newArr= []
+        array.forEach((data)=>{
+            newArr.push(callback(data, 2))
+        })
+        return newArr
+    }
+
+
+    console.log(addNumberInArray([1,2,3,4], addtwo))
+
+*/
 
 
 
