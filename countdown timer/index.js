@@ -7,14 +7,16 @@ var secondInput = document.getElementById("second");
 
 
 startButton.addEventListener('click', () => {
-    let minute = minuteInput.textContent;
-    let second = secondInput.textContent;
+    let minute = parseInt(minuteInput.textContent);
+    let second = parseInt(secondInput.textContent);
 
     startInterval = setInterval(() => {
-        if (minute === 0 && second === 0) {
-            // clearInterval(startInterval);
-            startButton.disabled = true;
-            stopButton.disabled = false;
+        if (minute === 0 && second ===0) {
+            clearInterval(startInterval);
+            startButton.disabled = false;
+            stopButton.disabled = true;
+            minuteInput.innerText = "00";
+            secondInput.innerText = "00";
             return;
         }
 
@@ -23,7 +25,15 @@ startButton.addEventListener('click', () => {
             stopButton.disabled = false;
             minute = minute - 1;
             console.log(minute)
-            minuteInput.textContent= minute;        }
+            minuteInput.textContent = minute;
+        }
+
+        if(second && second<60){
+            second = second - 1;
+            console.log(second)
+            secondInput.textContent = second;
+        }
+
     }, 1000);
 })
 
