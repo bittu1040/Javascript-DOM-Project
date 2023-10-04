@@ -1,13 +1,9 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.countdown {
-    margin-top: 100px;
+.center{
+display: flex;
+height: 80vh;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 }
 
 .input-section {
