@@ -1,20 +1,29 @@
-const buttons = document.querySelectorAll("button");
+"use strict";
 
-buttons.forEach((button) => {
-  button.addEventListener("click", counter);
-});
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const btnsOpenModal = document.querySelectorAll(".show-modal");
 
-function counter(e) {
-  console.log(e.target.id);
-  if (e.target.id === "increase") {
-    document.getElementById("counter").innerHTML =
-      +document.getElementById("counter").innerHTML + 1;
-  }
-  if (e.target.id === "decrease") {
-    document.getElementById("counter").innerHTML =
-      +document.getElementById("counter").innerHTML - 1;
-  }
-  if (e.target.id === "reset") {
-    document.getElementById("counter").innerHTML = 0;
-  }
+const open = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+for (let i = 0; i < btnsOpenModal.length; i++) {
+  btnsOpenModal[i].addEventListener("click", open);
 }
+
+const close = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+btnCloseModal.addEventListener("click", close);
+overlay.addEventListener("click", close);
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    close();
+  }
+});
