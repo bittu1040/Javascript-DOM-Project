@@ -43,3 +43,22 @@ search.addEventListener("keyup", function(){
     })
     pupolateCountry(filteredCountries)
 });
+
+
+
+let details=[
+    {name:"Bittu",age:22,city:"kolkata"},
+    {name:"ramesh",age:23,city:"blr"},
+    {name:"pawan",age:24,city:"delhi"},
+    {name:"roshan",age:25,city:"bom"},
+]
+
+let filteredData= details.filter((data)=>{
+    return data.age>23
+})
+
+filteredData.forEach((data)=>{
+    let div= document.createElement("div");
+    div.innerText=data.name + " " + data.age + " " + data.city;
+    document.getElementById('get-details').appendChild(div)
+})
