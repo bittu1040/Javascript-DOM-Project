@@ -1,0 +1,22 @@
+.center {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+
+table {
+    border-collapse: collapse;
+    width: 40%;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+button{
+    padding: 4px;
+}
