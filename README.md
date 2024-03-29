@@ -2,4 +2,4 @@
 
 open this link to check live 
 
-https://bittu1040.github.io/javascript-dom-project/index.html
+https://bittu1040.github.io/Javascript-DOM-Project/
