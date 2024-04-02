@@ -1,6 +1,13 @@
 .center {
     display: flex;
-    height: 80vh;
+    height: 50vh;
+    flex-wrap: wrap;
     padding: 20px;
     justify-content: space-around;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .center {
+      flex-direction: column;
+    }
   }
