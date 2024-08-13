@@ -10,7 +10,7 @@ body.dark-theme {
 }
 body:not(.dark-theme) {
   background-color: #d4cdcd;
-  color: #333333;
+  color: #000000;
 }
 
 .container {
