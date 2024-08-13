@@ -1,0 +1,33 @@
+$light-bg: #b05b5b;
+$light-text: #333333;
+
+$dark-bg: #2c3e50;
+$dark-text: #ecf0f1;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    
+    &.dark-theme {
+        background-color: $dark-bg;
+        color: $dark-text;
+    }
+
+    &:not(.dark-theme) {
+        background-color: $light-bg;
+        color: $light-text;
+    }
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+}

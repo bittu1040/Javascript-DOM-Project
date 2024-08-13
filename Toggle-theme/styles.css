@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+body.dark-theme {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+body:not(.dark-theme) {
+  background-color: #b05b5b;
+  color: #333333;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+.container button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
