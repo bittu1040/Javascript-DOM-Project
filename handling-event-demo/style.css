@@ -1,0 +1,52 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.info-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.parent {
+    background: #eff6ff;
+    padding: 30px;
+    border: 2px dashed #93c5fd;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 20px 0;
+}
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+.card:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.btn {
+    display: inline-block;
+    background: #3b82f6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.btn:hover {
+    background: #2563eb;
+}
+.explanation {
+    margin-top: 20px;
+    line-height: 1.5;
+}
