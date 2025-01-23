@@ -38,3 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+/*
+1. Create HTML Structure: Define containers and items in index.html.
+2. Style with CSS: Style containers and items in style.css.
+3. Initialize Items: Create an array of items and append them to the container in index.js.
+4. Add Event Listeners: Use dragstart, dragover, and drop events in index.js.
+5. Set Data on Drag Start: Use e.dataTransfer.setData to store the item ID during the dragstart event.
+6. Get Data on Drop: Use e.dataTransfer.getData to retrieve the item ID during the drop event and append the item to the target container.
+*/
