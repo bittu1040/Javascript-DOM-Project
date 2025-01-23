@@ -1,0 +1,10 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid;
+}
+.container {
+    margin: 0 auto;
+    background-color: #242424;
+}
