@@ -4,7 +4,42 @@ body {
     padding: 20px;
     border: 1px solid;
 }
-.container {
-    margin: 0 auto;
+.main-container {
     background-color: #242424;
+    padding: 1rem;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.container-1, .container-2 {
+    width: 25%;
+    min-height: 400px;
+    border: 2px dashed #646cff;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.item {
+    padding: 1rem;
+    margin: 5px 0;
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid #646cff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .container-1, .container-2{
+        width: 100%;
+    }
+  }
